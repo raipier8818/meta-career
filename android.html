@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/a2fa6aac90.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/page.css" /> <!--전반적으로 경로가 잘못 작성됨 상위 폴더로 이동 후(.찍어서) 찾아가야 함-->
+  <title>Android</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main_page">
+      <h1>Android</h1>
+      <a href="./index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>HOME</span>
+      </a>
+      <a href="./ios.html">
+        <i class="fa-brands fa-apple"></i>
+        <span>IOS</span>
+      </a>
+      <a href="./web.html">
+        <i class="fa-solid fa-globe"></i>
+        <span>WEB</span>
+      </a>
+      <a href="./server.html">
+        <i class="fa-solid fa-server"></i>
+        <span>SERVER</span>
+      </a>
+    </div>
+    <div class="persist">
+      <div class="frame">
+        <div class="part_information">
+          <h1>Android Part</h1>
+          <div class="inform">
+            <img src="./assets/img/android_handsup.jpeg" height="100%" alt="web" />
+            <p>
+              kotlin의 기본 문법을 숙지하고 안드로이드 기초와 UI 기초를 학습합니다.<br />
+              학습한 내용을 바탕으로 간단한 어플리케이션을 제작합니다.<br />
+              어플리케이션을 제작하는 과정에서 필요하다면 협업 능력을 증진합니다.<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="persist">
+      <div class="frame">
+        <div class="language_description">
+          <img src="./assets/img/kotlin.png" width="300px" alt="kotlin" />
+          <p>
+            IntelliJ IDEA의 개발사 JetBrains에서 2011년에 공개한 오픈 소스
+            프로그래밍 언어입니다.<br />
+            자바가상머신(JVM) 기반의 언어로 자바와 유사하지만 보다 간결한 문법으로 더욱 다양한
+            기능을 제공합니다.<br />
+            상기의 장점으로 인해 구글, 카카오를 위시한 여러 기업들이 Kotlin을 개발 언어로 채택했습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="persist">
+      <div class="frame">
+        <div class="curriculum">
+          <h1>Curriculum</h1>
+          <img src="/assets/img/android_curri.png" alt="커리큘럼_이미지" />
+        </div>
+      </div>
+    </div>
+    <div class="persist">
+      <div class="frame">
+        <div class="vision">
+          <h1>Vision</h1>
+          <ul>
+            <li>
+              <p>성장</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+            <li>
+              <p>혁신</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+            <li>
+              <p>간결성</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.main_page').style.backgroundImage = `url(./assets/img/android_rotate.png)`; //작은 따옴표가 아니라 백틱으로 수정해야 함
+
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { //div가 루트 요소(default 값으로 '뷰포트'가 들어감)와 교차하는 중인가?
+          entry.target.style.opacity = 1;
+        } else {
+          entry.target.style.opacity = 0;
+        }
+      });
+    }, { threshold: 0.5 }); // div의 절반 이상이 뷰포트에 나타날 때 옵저버가 실행됨
+
+    let sections = document.querySelectorAll('.container > div'); // container의 div을 모두 가져옴
+    sections.forEach((section) => {
+      section.style.transition = 'opacity 1s ease-in-out'; // 1초 동안 서서히 나타남 
+      observer.observe(section); // 옵저버 실행
+    });
+    // 처음 화면 구동 시 부서 소개 창이 잠깐 보이는 오류가 있는데, page.css에서 초기 opacity 값을 0으로 설정하면 해결됨
+  </script>
+</body>
+
+</html>

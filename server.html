@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/a2fa6aac90.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/page.css" /> <!--전반적으로 경로가 잘못 작성됨 상위 폴더로 이동 후(.찍어서) 찾아가야 함-->
+  <title>Server</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main_page">
+      <h1>Server</h1>
+      <a href="./index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>HOME</span>
+      </a>
+      <a href="./ios.html">
+        <i class="fa-brands fa-apple"></i>
+        <span>IOS</span>
+      </a>
+      <a href="./web.html">
+        <i class="fa-solid fa-globe"></i>
+        <span>WEB</span>
+      </a>
+      <a href="./android.html">
+        <i class="fa-solid fa-server"></i>
+        <span>ANDROID</span>
+      </a>
+    </div>
+    <div class="persist">
+      <div class="frame">
+        <div class="part_information">
+          <h1>Server Part</h1>
+          <div class="inform">
+            <img src="./assets/img/server-image.png" height="100%" alt="web" />
+            <p>
+              Node.js와 Express를 활용한 HTTP 서버 제작을 학습합니다.<br />
+              다양한 클라이언트와 소통하며 정보를 주고받는 방법을 학습합니다.<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="persist">
+      <div class="frame">
+        <div class="language_description">
+          <img src="./assets/img/server-image.png" width="150px" alt="kotlin" />
+          <p>
+            서버는 분산된 클라이언트 간에 정보를 동기화하고 유지하는 역할을 합니다.<br />
+            웹, 모바앨 앱 등 클라이언트의 종류에 관계없이 데이터를 전달하기 위해 표준화된 요청 방식을 사용합니다.<br />
+            사용자와의 상호작용 전반을 담당하므로 항상 데이터를 전송할 수 있도록 가용성을 유지하는 것이 중요합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="persist">
+      <div class="frame">
+        <div class="curriculum">
+          <h1>Curriculum</h1>
+          <img src="/assets/img/server-curri.png" alt="서버 커리큘럼" />
+        </div>
+      </div>
+    </div>
+    <div class="persist">
+      <div class="frame">
+        <div class="vision">
+          <h1>Vision</h1>
+          <ul>
+            <li>
+              <p>성장</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+            <li>
+              <p>혁신</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+            <li>
+              <p>검증</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.main_page').style.backgroundImage = `url(./assets/img/server-image.png)`; //작은 따옴표가 아니라 백틱으로 수정해야 함
+    document.querySelector('language_discrip')
+
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { //div가 루트 요소(default 값으로 '뷰포트'가 들어감)와 교차하는 중인가?
+          entry.target.style.opacity = 1;
+        } else {
+          entry.target.style.opacity = 0;
+        }
+      });
+    }, { threshold: 0.5 }); // div의 절반 이상이 뷰포트에 나타날 때 옵저버가 실행됨
+
+    let sections = document.querySelectorAll('.container > div'); // container의 div을 모두 가져옴
+    sections.forEach((section) => {
+      section.style.transition = 'opacity 1s ease-in-out'; // 1초 동안 서서히 나타남 
+      observer.observe(section); // 옵저버 실행
+    });
+    // 처음 화면 구동 시 부서 소개 창이 잠깐 보이는 오류가 있는데, page.css에서 초기 opacity 값을 0으로 설정하면 해결됨
+  </script>
+</body>
+
+</html>

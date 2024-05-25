@@ -1,0 +1,149 @@
+@import 'base/fonts'
+@import 'base/normalize'
+@import 'base/vars'
+// @import 'base/selection-colors'
+@import 'base/body-element'
+
+.container
+    max-width: 1024px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: stretch
+
+hr
+    margin: 20px
+    border: none
+    border-top: 0.5px solid #333
+
+.persist
+    display: flex
+    height: 200vh
+    flex-direction: column
+    align-items: stretch
+
+.frame
+    height: 100vh
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    justify-content: center
+    position: sticky
+    top: 0
+
+.vision
+    h1
+        font-size: 40px
+        text-align: center
+        padding-left: 10px
+    ul
+        display: flex
+        flex-direction: row
+        padding: 0
+
+        justify-content: center
+
+        li
+            flex: 1
+            padding: 0 10px
+            list-style: none
+            display: flex
+            align-items: center
+            justify-content: space-around
+
+            &:not(:last-child)
+                border-right: 1px solid #333
+
+.main_page
+    background-image: url(/assets/img/android_rotate.png)
+    background-repeat: no-repeat
+    background-position: right
+    background-size: 80px
+    margin-left: 10px
+    h1
+        margin: 10px 0 50px 0
+        font-size: 40px
+        color: white
+
+    a
+        color: white
+        background-color: black
+        border: 1px solid white
+        font-size: 15px
+        padding: 5px
+        text-align: center
+        margin-right: 10px
+        text-decoration: none
+
+    a:hover
+        background-color: #0f33ff
+        border: 1px solid #0f33ff
+
+    a:active
+        background-color: #0f33ff
+        border: 1px solid #0f33ff
+
+.part_information
+    margin-bottom: 50px
+
+    h1
+        text-align: center
+        font-size: 40px
+
+    img
+        // height: 200px
+        // margin-left: 20px
+        // margin-bottom: 20px
+        // align-self: center
+        display: flex
+        justify-content: center
+        flex-direction: row
+        height: 100px
+
+    p
+        text-align: center
+        font-size: 16px
+        margin-top: 60px
+        margin-left: 20px
+
+    .inform
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+
+.language_description
+    display: block
+    flex-direction: row
+    img
+        display: flex
+        justify-content: center
+        margin: auto
+
+    h2, p
+        text-align: center
+
+    p
+        font-size: 16px
+
+.curriculum
+    h1
+        font-size: 40px
+        text-align: center
+
+    img
+        width: 50%
+        display: flex
+        align-self: center
+        margin: auto
+
+@media (max-width: 1180px)
+    .container
+        margin: 0 10px
+    .vision
+        ul
+            flex-direction: column
+            li
+                margin: 0 20px
+                &:not(:last-child)
+                    border-right: none
+                    border-bottom: 1px solid #333

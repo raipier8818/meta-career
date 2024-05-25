@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/a2fa6aac90.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/page.css" />
+  <title>IOS</title>
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="main_page">
+      <h1>IOS</h1>
+
+      <a href="./index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>HOME</span>
+      </a>
+      <a href="./android.html">
+        <i class="fa-brands fa-android"></i>
+        <span>ANDROID</span>
+      </a>
+      <a href="./web.html">
+        <i class="fa-solid fa-globe"></i>
+        <span>WEB</span>
+      </a>
+      <a href="./server.html">
+        <i class="fa-solid fa-server"></i>
+        <span>SERVER</span>
+      </a>
+    </div>
+    <div class="persist">
+      <div class="frame">
+        <div class="part_information">
+          <h1>IOS Part</h1>
+          <div class="inform">
+            <img src="./assets/img/ios.jpg" height="100%" alt="web" />
+            <p>
+              ios 부서는 swift 문법을 숙지하고, swift를 통해 코딩하는 법을 배웁니다.<br />
+              안전성을 우선으로하는 프로그래밍을 배우고 고전게임을 만드는 것이 최종 목표입니다.<br />
+              협업과 유지,보수를 용이하게 하기 위한 프로그래밍 습관 또한 배울 것 입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="persist">
+      <div class="frame">
+        <div class="language_description">
+          <img src="./assets/img/swift_logo.png" width="300px" alt="ios" />
+          <p>
+            스위프트란 Apple WWDC14에서 공개된 프로그래밍 언어로 IOS 프로그래밍을
+            하는데 쓰이는 언어입니다.<br />
+            Object-C가 가지고 있는 단점을 보완하고 클로저, 다중 리턴 타입(튜플),
+            네임스페이스, 제네릭, 타입 인퍼런스 등 <br />
+            Objective-C에는 없었던 현대 프로그래밍 언어가 갖고 있는 기능을 많이
+            포함시켰으며, 이에 따라 일정한 성능 향상을 보이고 있습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="persist">
+      <div class="frame">
+        <div class="curriculum">
+          <h1>Curriculum</h1>
+          <img src="/assets/img/ios_curri.png" alt="커리큘럼_이미지" />
+        </div>
+      </div>
+    </div>
+
+    <div class="persist">
+      <div class="frame">
+        <div class="vision">
+          <h1>Vision</h1>
+          <ul>
+            <li>
+              <p>성장</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+            <li>
+              <p>혁신</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+            <li>
+              <p>정교함</p>
+              <i class="fa-solid fa-heart"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <script>
+    document.querySelector('.main_page').style.backgroundImage = 'url(/assets/img/apple_logo.png)';
+
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+        } else {
+          entry.target.style.opacity = 0;
+        }
+      });
+    }, { threshold: 0.5 });
+
+    let sections = document.querySelectorAll('.container > div');
+    sections.forEach((section) => {
+      section.style.transition = 'opacity 0.5s ease-in-out';
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+
+</html>

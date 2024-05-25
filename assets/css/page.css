@@ -1,0 +1,448 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Black.eot");
+  src: url("fonts/Montserrat-Black.woff") format("woff"), url("fonts/Montserrat-Black.ttf") format("truetype"), url("fonts/Montserrat-Black.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Bold.eot");
+  src: url("fonts/Montserrat-Bold.woff") format("woff"), url("fonts/Montserrat-Bold.ttf") format("truetype"), url("fonts/Montserrat-Bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Regular.eot");
+  src: url("fonts/Montserrat-Regular.woff") format("woff"), url("fonts/Montserrat-Regular.ttf") format("truetype"), url("fonts/Montserrat-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Light.eot");
+  src: url("fonts/Montserrat-Light.woff") format("woff"), url("fonts/Montserrat-Light.ttf") format("truetype"), url("fonts/Montserrat-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JalnanGothic";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+AC00-D7AF;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+AC00-D7AF;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  unicode-range: U+AC00-D7AF;
+  font-display: swap;
+}
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+body {
+  background-color: #0c0c0c;
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: "Montserrat", "Pretendard", sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+hr {
+  margin: 20px;
+  border: none;
+  border-top: 0.5px solid #333;
+}
+
+.persist {
+  display: flex;
+  height: 150vh;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.frame {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}
+
+.vision h1 {
+  font-size: 40px;
+  text-align: center;
+  padding-left: 10px;
+}
+.vision ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: center;
+}
+.vision ul li {
+  flex: 1;
+  padding: 0 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.vision ul li:not(:last-child) {
+  border-right: 1px solid #333;
+}
+
+.main_page {
+  background-image: url(/assets/img/android_rotate.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
+  margin-left: 10px;
+  margin-bottom: 50vh;
+}
+.main_page h1 {
+  margin: 10px 0 50px 0;
+  font-size: 40px;
+  color: white;
+}
+.main_page a {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  font-size: 15px;
+  padding: 5px;
+  text-align: center;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.main_page a:hover {
+  background-color: #0f33ff;
+  border: 1px solid #0f33ff;
+}
+.main_page a:active {
+  background-color: #0f33ff;
+  border: 1px solid #0f33ff;
+}
+
+.part_information {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.part_information h1 {
+  text-align: center;
+  font-size: 40px;
+}
+.part_information img {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 100px;
+}
+.part_information p {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 60px;
+  margin-left: 20px;
+}
+.part_information .inform {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.language_description {
+  display: block;
+  flex-direction: row;
+}
+.language_description img {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.language_description h2, .language_description p {
+  text-align: center;
+}
+.language_description p {
+  font-size: 16px;
+}
+
+.curriculum h1 {
+  font-size: 40px;
+  text-align: center;
+}
+.curriculum img {
+  width: 50%;
+  display: flex;
+  align-self: center;
+  margin: auto;
+}
+
+@media (max-width: 1180px) {
+  .container {
+    margin: 0 10px;
+  }
+  .vision ul {
+    flex-direction: column;
+  }
+  .vision ul li {
+    margin: 0 20px;
+  }
+  .vision ul li:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+}/*# sourceMappingURL=page.css.map */
