@@ -1,3 +1,4 @@
+// page-transition.js
 document.addEventListener('DOMContentLoaded', function() {
   // 페이드 인 애니메이션
   if (sessionStorage.getItem('fadeIn')) {
@@ -21,3 +22,4 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 });
+
