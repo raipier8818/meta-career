@@ -15,6 +15,8 @@ body
     color: #ffffff
     margin: 0
     padding: 0
+    opacity: 0
+    animation: fadeIn 0.5s forwards
 
 main
     display: flex
@@ -101,23 +103,19 @@ main
     text-align: center
     line-height: 200px
     font-size: 80px 
-    transition: opacity 0.3s ease
-    height: 200px   
-
-main, .empty
-    opacity: 0
+    height: 200px  
+    padding-top: 100px
 
 nav.nav
     position: fixed
     top: 50%
-    width: 200px
+    min-width: 150px
     transform: translateY(-50%)
     background-color: #0c0c0c
+    // background-color: #fff
     padding: 10px
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
     border-radius: 10px
-    opacity: 0
-    transition: opacity 0.3s ease
     color: #fff
 
 nav.nav ul
@@ -164,18 +162,6 @@ nav.nav ul li a.active .circle
 nav.nav ul li a:hover
     color: #74b7ff
 
-// nav.nav ul li::after
-//     content: ''
-//     position: absolute
-//     left: 50%
-//     top: 0
-//     bottom: 0
-//     width: 1px
-//     background-color: #fff
-//     transform: translateX(-50%)
-
-.event
-    transition: opacity 0.5s ease
 
 .visible
     opacity: 1
@@ -188,3 +174,13 @@ nav.nav ul li a:hover
 
 .hidden
     opacity: 0
+
+.gallery 
+    position: fixed
+    top: 50%     
+    left: calc(50% - 450px)       
+    transform: translateY(-50%)
+
+    img
+        max-width: 750px
+        max-width: 400px

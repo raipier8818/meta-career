@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             sessionStorage.setItem('fadeIn', true);
             setTimeout(function () {
                 window.location.href = 'career.html';
-            }, 1000); // 1초 후 페이지 이동
+            }, 500); // 1초 후 페이지 이동
         });
     }
 });

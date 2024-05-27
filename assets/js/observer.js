@@ -53,9 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
         event.classList.remove('visible', 'near-visible', 'far-visible');
       }
     });
+    const gallary = document.querySelector('.gallery img'); // imgContainer 내의 이미지 선택
 
     if (closestEvent) {
       const monthId = closestEvent.getAttribute('id');
+      const imgSrc = closestEvent.dataset.imgSrc; // data-img-src 속성에서 이미지 경로 가져오기
+      gallary.src = imgSrc; // 이미지 소스 변경
+
       document.querySelectorAll('nav.nav a').forEach(anchor => {
         anchor.classList.remove('active');
         if (anchor.getAttribute('href').substring(1) === monthId) {
@@ -80,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const targetElement = document.getElementById(targetId);
       const headerOffset = document.querySelector('header').offsetHeight; // Adjust this value to match the height of your header or any other offset
       const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset - targetElement.offsetHeight / 2;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset - targetElement.offsetHeight;
 
       window.scrollTo({
         top: offsetPosition,
@@ -101,7 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', positionNav);
 
   setTimeout(() => {
-    document.querySelector('main').classList.add('fade-in');
-    document.querySelector('.empty').classList.add('fade-in');
+    document.querySelector('body').classList.add('fade-in');
   }, 100); // Small delay to ensure initial styles are applied
+
+
 });
