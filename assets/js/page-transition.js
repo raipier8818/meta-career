@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.opacity = '0';
         setTimeout(() => {
             document.body.style.opacity = '1';
-        }, 10);
+        }, 1000);
         sessionStorage.removeItem('fadeIn');
     }
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             sessionStorage.setItem('fadeIn', true);
             setTimeout(function () {
                 window.location.href = 'career.html';
-            }, 500); // 1초 후 페이지 이동
+            }, 1000); // 1초 후 페이지 이동
         });
     }
 });
