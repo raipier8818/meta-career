@@ -1,5 +1,75 @@
-// assets/js/observer.js
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
+  await fetch("./assets/data/data.json").then(async res => {
+    const data = await res.json();
+    const career = data.career;
+    console.log(career);
+
+    // add career data to the page
+
+    // add ul in nav
+    const nav = document.querySelector('nav.nav');
+    const ul = document.createElement('ul');
+    const main = document.querySelector('main');
+
+    // create li and a for each career
+    // create div in main for each career
+    career.forEach((career, index) => {
+      const li = document.createElement('li');
+
+      const a = document.createElement('a');
+      a.href = `#${index}`;
+
+      const span = document.createElement('span');
+      span.innerText = `${career.title} ${career.subtitle}`;
+
+      const circle = document.createElement('div');
+      circle.classList.add('circle');
+
+      ul.appendChild(li);
+      li.appendChild(a);
+      a.appendChild(span);
+      a.appendChild(circle);
+
+      const event = document.createElement('div');
+      event.id = index;
+      event.classList.add('event');
+      event.setAttribute("data-img-src", career.img);
+
+      const left = document.createElement('div');
+      left.classList.add('left');
+
+      const right = document.createElement('div');
+      right.classList.add('right');
+
+      const careerDiv = document.createElement('div');
+      careerDiv.classList.add('career');
+
+      const title = document.createElement('div');
+      title.classList.add('title');
+      title.innerText = career.title;
+
+      const subtitle = document.createElement('h3');
+      subtitle.innerText = career.subtitle;
+
+      const content = document.createElement('p');
+      content.innerText = career.content;
+
+      careerDiv.appendChild(title);
+      careerDiv.appendChild(subtitle);
+      careerDiv.appendChild(content);
+
+      right.appendChild(careerDiv);
+
+      event.appendChild(left);
+      event.appendChild(right);
+
+      main.appendChild(event);
+    });
+
+    nav.appendChild(ul);
+
+  });
+
   const options = {
     root: null,
     rootMargin: '0px',
@@ -84,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const targetElement = document.getElementById(targetId);
       const headerOffset = document.querySelector('header').offsetHeight; // Adjust this value to match the height of your header or any other offset
       const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset - targetElement.offsetHeight;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset - targetElement.offsetHeight / 2;
 
       window.scrollTo({
         top: offsetPosition,
@@ -107,6 +177,5 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(() => {
     document.querySelector('body').classList.add('fade-in');
   }, 100); // Small delay to ensure initial styles are applied
-
-
 });
+
