@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       const targetElement = document.getElementById(targetId);
       const headerOffset = document.querySelector('header').offsetHeight; // Adjust this value to match the height of your header or any other offset
       const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset - targetElement.offsetHeight / 2;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset - targetElement.offsetHeight;
 
       window.scrollTo({
         top: offsetPosition,
